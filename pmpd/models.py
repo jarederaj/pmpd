@@ -19,7 +19,7 @@ class Environment(object):
 
     def __init__(self, **kwargs):
         assert all(hasattr(type(self), attr)
-                   for attr in kwargs.keys())
+                for attr in kwargs.keys())
         self.__dict__.update(**kwargs)
 
     @property

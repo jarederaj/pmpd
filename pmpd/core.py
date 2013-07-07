@@ -12,6 +12,7 @@ Invocation flow:
 
 import sys
 from models import Environment
+from . import ExitStatus
 
 def main(args=sys.argv[1:], env=Environment()):
     """Run the main program and write the output to ``env.stdout``.
@@ -22,3 +23,7 @@ def main(args=sys.argv[1:], env=Environment()):
 
     if env.config.default_options:
         args = env.config.default_options + args
+
+    exit_status = ExitStatus.OK
+
+    return exit_status
