@@ -2,3 +2,4 @@
 *.tar.gz
 pmpd.egg-info/*
 .pmpd/*
+README.md

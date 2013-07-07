@@ -2,7 +2,7 @@
 pmpd: Python Managed Project Deployments for git
 ************************************************
 
-pmpd [git puhmp-eed] is a **command line interface for git deployments** 
+pmpd [puhmp-eed] is a **command line interface for git deployments** 
 that release engineers can use to make life easier. It is heavily influenced by 
 Vincent Driessen's `branching model`_ and uses a syntax similar to `gitflow`_. 
 Its goal is to simplify and streamline deployments of complex branching systems 
@@ -32,8 +32,8 @@ Main Features
 Installation
 ============
 
-The latest **stable version** of pmpd can always be installed or updated to 
-via pip:
+The latest **stable version** of pmpd can always be installed or updated via 
+pip:
 
 .. code-block:: bash
 
@@ -89,6 +89,28 @@ Resources
 * `pmpd GitHub`_
 * `pmpd PyPI`_
 * `pmpd PyScape`_
+
+====
+TODO
+====
+
+* Utilities
+** bash commands
+** git commands
+* Basic Commands
+** feature start
+** feature push
+** hotfix start -- very distrintct from the git flow model
+** hotfix push -- very distrintct from the git flow model
+** build
+* Investigate
+** pre-deployment feature conflicts
+** locate undepload feature branches
+** locate fully integrated branches
+** cleanup loose integrated branches
+* Deployments
+** deploy
+** rollback
 
 ============
 Contributers
