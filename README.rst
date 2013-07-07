@@ -95,22 +95,22 @@ TODO
 ====
 
 * Utilities
-** bash commands
-** git commands
+ - bash commands
+ -  git commands
 * Basic Commands
-** feature start
-** feature push
-** hotfix start -- very distrintct from the git flow model
-** hotfix push -- very distrintct from the git flow model
-** build
+ - feature start
+ - feature push
+ - hotfix start -- very distrintct from the git flow model
+ - hotfix push -- very distrintct from the git flow model
+ - build
 * Investigate
-** pre-deployment feature conflicts
-** locate undepload feature branches
-** locate fully integrated branches
-** cleanup loose integrated branches
+ - pre-deployment feature conflicts
+ - locate undepload feature branches
+ - locate fully integrated branches
+ - cleanup loose integrated branches
 * Deployments
-** deploy
-** rollback
+ - deploy
+ - rollback
 
 ============
 Contributers
