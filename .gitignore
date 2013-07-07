@@ -1,0 +1,4 @@
+*.pyc
+*.tar.gz
+pmpd.egg-info/*
+.pmpd/*

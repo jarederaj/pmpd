@@ -1,0 +1,10 @@
+Changes from version 0.0.0 to 0.1.0
+-----------------------------------
+- Start Hash: 3f1f2ea07cebf8cc36a9eab3251ccc4aa9cf4e8e
+- End Hash:   
+- Added .pmpd/config.json for repo level configurations. Automatically intitializes if it doesn't exist.
+- Initial release. Software is still unwritten.  Project is in planning phase.
+- Added some cross platform and multi-version support
+- Set Development status to "planning" and added other tags for PyPI.
+- Basic project structure stubbed out.
+- Documentation added for rst and md.
