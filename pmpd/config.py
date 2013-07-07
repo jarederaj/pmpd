@@ -97,33 +97,35 @@ class Config(BaseConfigDict):
     DEFAULTS = {
         'implicit_content_type': 'json',
         'default_options': [],
-        'alpha': {
-            'user': '',
-            'ip': '',
-            'tickets': [],
-            'parents': ['beta','predevelop'],
-        },
-        'beta': {
-            'user': '',
-            'ip': '',
-            'tickets': [],
-            'parents': ['predevelop'],
-        },
-        'predevelop': {
-            'user': '',
-            'ip': '',
-            'inherits': 'beta',
-        },
-        'develop': {
-            'user': '',
-            'ip': '',
-            'inherits': 'predevelop',
-        },
-        'master': {
-            'user': '',
-            'ip': '',
-            'inherits': 'develop',
-        },
+        'branches': {
+            'alpha': {
+                'user': '',
+                'ip': '',
+                'tickets': [],
+                'parents': ['beta','predevelop'],
+            },
+            'beta': {
+                'user': '',
+                'ip': '',
+                'tickets': [],
+                'parents': ['predevelop'],
+            },
+            'predevelop': {
+                'user': '',
+                'ip': '',
+                'inherits': 'beta',
+            },
+            'develop': {
+                'user': '',
+                'ip': '',
+                'inherits': 'predevelop',
+            },
+            'master': {
+                'user': '',
+                'ip': '',
+                'inherits': 'develop',
+            }
+        }
     }
 
     def __init__(self, *args, **kwargs):

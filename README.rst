@@ -1,6 +1,6 @@
-****************************************************
-pmpd: Git and Python Managed Project Deployments
-****************************************************
+************************************************
+pmpd: Python Managed Project Deployments for git
+************************************************
 
 pmpd [git puhmp-eed] is a **command line interface for git deployments** 
 that release engineers can use to make life easier. It is heavily influenced by 
@@ -9,7 +9,7 @@ Its goal is to simplify and streamline deployments of complex branching systems
 by making commands and actions as **human-friendly** as possible. It provides a 
 simple ``pmpd`` command that allows for merging and deploying branches to 
 any number of distinct servers that are **connected by a common git server** 
-like `gitolite`_.
+like `gitolite`_ and GitHub.
 
 .. contents::
     :local:
