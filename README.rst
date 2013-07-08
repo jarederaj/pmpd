@@ -113,7 +113,7 @@ Resources
 TODO
 ====
 
-* Implement tests
+* Commandline utility class
 * Basic Commands
 - help
 - feature start
