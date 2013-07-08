@@ -13,6 +13,38 @@ from pmpd.compat import is_windows, is_py26, bytes, str
 OK = 'HTTP/1.1 200'
 COLOR = '\x1b['
 
+MOCK_TICKETS = [1,2,3,4,5,6]
+
+MOCK_BRANCHES = {
+    'testalpha': {
+        'user': '',
+        'ip': '127.0.0.1',
+        'tickets': [1,2],
+        'parents': ['testbeta','testpredevelop'],
+    },
+    'testbeta': {
+        'ip': '127.0.0.1',
+        'tickets': [3,4],
+        'parents': ['testpredevelop'],
+    },
+}
+
+MOCK_DEPLOYMENTS = {
+    'testpredevelop': {
+        'user': '',
+        'ip': '127.0.0.1',
+        'inherits': 'testbeta',
+    },
+    'testdevelop': {
+        'ip': '127.0.0.1',
+        'inherits': 'testpredevelop',
+    },
+    'testmaster': {
+        'ip': '127.0.0.1',
+        'inherits': 'testdevelop',
+    }
+}
+
 def mk_config_dir():
     return tempfile.mkdtemp(prefix='pmpd_test_config_dir')
 
@@ -48,10 +80,26 @@ class BytesResponse(bytes):
 class StrResponse(str):
     stderr = json = exit_status = None
 
+def environment(**kwargs):
+    return env
+
+
 def cli(*args, **kwargs):
     env = kwargs.get('env')
     if not env:
         env = kwargs['env'] = TestEnvironment()
+    
+    # setup a mock configuration
+    toplevel = env.config['__meta__']['toplevel']
+
+    def get_mock(mock, toplevel):
+        branches = MOCK_BRANCHES
+        for branch_name in branches:
+            branches[branch_name]['toplevel'] = toplevel
+        return branches
+
+    env.config.branches = get_mock(MOCK_BRANCHES, toplevel)
+    env.config.deployments = get_mock(MOCK_DEPLOYMENTS, toplevel)
 
     stdout = env.stdout
     stderr = env.stderr
@@ -114,6 +162,10 @@ class BaseTestCase(unittest.TestCase):
     def assertIsNone(self, obj, msg=None):
         self.assertEqual(obj, None, msg=msg)
 
+#################################################################
+# Low-level tests of utilities for git and bash.
+#################################################################
+
 
 #################################################################
 # High-level tests using cli().
@@ -122,7 +174,8 @@ class BaseTestCase(unittest.TestCase):
 class pmpdTest(BaseTestCase):
 
     def test_init(self):
-        r = cli()
+        r = cli('init')
+        print(r)
         self.assertEqual(r, '')
 
 #################################################################

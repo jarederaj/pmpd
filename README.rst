@@ -45,13 +45,32 @@ Configuration
 
 After installation is complete pmpd puts **.pmpd/config.json** into the root 
 of your repository. You may want to add the folder to .gitignore, but leaving it 
-there is also a good way to keep track of your build history. pmpd.conf is used 
-to relate servers to reference branches and to specify which feature branches 
-belong in a given release. 
+there is also a good way to keep track of your build history and is especially 
+usefull if you have more than one person that's acting as a release engineer. 
+pmpd.conf is used to relate servers to reference branches and to specify which 
+feature branches belong in a given release. 
 
 You must fill out **.pmpd/config.json** so that it matches the flow of your own 
 deployments and you'll probably update this file in some way every time a new 
 release is pmpd out.
+
+---------------------
+Reserved branch names
+---------------------
+
+There is some automatic branch naming that goes on in pmpd that goes beyond 
+just the branches that you specify in your configuration.  The following 
+branches should be considered reserved and offlimits for your work.  Failure to 
+observe this will end up in almost certain destruction of your branch.
+
+Please do not try to use the following names for your branches:
+
+* testdepends
+* testalpha
+* testbeta
+* testpredevelop
+* testdevelop
+* testmaster
 
 =====
 Usage

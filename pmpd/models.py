@@ -18,8 +18,11 @@ class Environment(object):
     stderr_isatty = sys.stderr.isatty()
 
     def __init__(self, **kwargs):
-        assert all(hasattr(type(self), attr)
-                for attr in kwargs.keys())
+        try:
+            assert all(hasattr(type(self), attr)
+                    for attr in kwargs.keys())
+        except:
+            pass
         self.__dict__.update(**kwargs)
 
     @property

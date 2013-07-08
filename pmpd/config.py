@@ -101,28 +101,35 @@ class Config(BaseConfigDict):
             'alpha': {
                 'user': '',
                 'ip': '',
+                'toplevel': '',
                 'tickets': [],
                 'parents': ['beta','predevelop'],
             },
             'beta': {
                 'user': '',
                 'ip': '',
+                'toplevel': '',
                 'tickets': [],
                 'parents': ['predevelop'],
             },
+        },
+        'deployments': {
             'predevelop': {
                 'user': '',
                 'ip': '',
+                'toplevel': '',
                 'inherits': 'beta',
             },
             'develop': {
                 'user': '',
                 'ip': '',
+                'toplevel': '',
                 'inherits': 'predevelop',
             },
             'master': {
                 'user': '',
                 'ip': '',
+                'toplevel': '',
                 'inherits': 'develop',
             }
         }
