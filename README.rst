@@ -42,6 +42,8 @@ git is hard to learn
 
 ``pmpd`` is a reaction the complexities of git and the incompleteness of gitflow.  
 A lot of the best criticisms of git seem to come from people who use and love
+git. `Peter Lundgren`_ wrote an excellent `blog post`_ to this effect. 
+`Steve Losh`_ also wrote an excellent `metaphor`_ for git's UX, comparing 
 learning git to the study of Zen Koans. Git is especially hard to learn if you 
 don't speak English fluently because the functionality itself can at times be 
 cryptic. With 147 commands A lot of the functionality that's available in git 
@@ -220,14 +222,14 @@ Contributers
 
 Jared Hall, `PyScape`_
 
-.. _branching model: http://nvie.com/git-model
-.. _gitflow: https://github.com/nvie/gitflow
-.. _gitolite: https://github.com/sitaramc/gitolite
-.. _Peter Lundgren: http://www.peterlundgren.com/
-.. _blog post: http://www.peterlundgren.com/blog/on-gits-shortcomings/
-.. _Steve Losh: http://stevelosh.com/
-.. _metaphor: http://stevelosh.com/blog/2013/04/git-koans/
-.. _PyScape: http://www.pyscape.com/pmpd
-.. _pmpd GitHub: https://github.com/jarederaj/pmpd
-.. _pmpd PyPI: https://pypi.python.org/pypi/pmpd/
-.. _pmpd PyScape: http://www.pyscape.com/pmpd
+.. _branching model:        http://nvie.com/git-model
+.. _gitflow:               https://github.com/nvie/gitflow
+.. _gitolite:              https://github.com/sitaramc/gitolite
+.. _Peter Lundgren:         http://www.peterlundgren.com/
+.. _blog post:              http://www.peterlundgren.com/blog/on-gits-shortcomings/
+.. _Steve Losh:             http://stevelosh.com/
+.. _metaphor:               http://stevelosh.com/blog/2013/04/git-koans/
+.. _PyScape:                http://www.pyscape.com/pmpd
+.. _pmpd GitHub:           https://github.com/jarederaj/pmpd
+.. _pmpd PyPI:             https://pypi.python.org/pypi/pmpd/
+.. _pmpd PyScape:           http://www.pyscape.com/pmpd
