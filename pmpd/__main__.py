@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-""" The main entry point. Invoke as `git-pmpd' or `python -m git-pmpd'.
+""" The main entry point. Invoke as `pmpd' or `python -m pmpd'.
 
 """
 

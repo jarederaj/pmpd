@@ -1,4 +1,4 @@
-"""This module provides the main functionality of git-pmpd.
+"""This module provides the main functionality of pmpd.
 
 Invocation flow:
 
@@ -13,6 +13,7 @@ Invocation flow:
 import sys
 from models import Environment
 from . import ExitStatus
+from cli import parser
 
 def main(args=sys.argv[1:], env=Environment()):
     """Run the main program and write the output to ``env.stdout``.
@@ -24,6 +25,6 @@ def main(args=sys.argv[1:], env=Environment()):
     if env.config.default_options:
         args = env.config.default_options + args
 
-    
+    args = parser.parse_args(args=args, env=env)
 
-    return args
+    return 0

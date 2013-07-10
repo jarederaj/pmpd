@@ -9,6 +9,9 @@ import shutil
 from pmpd.models import Environment
 from pmpd.core import main
 from pmpd.compat import is_windows, is_py26, bytes, str
+from pmpd import ExitStatus
+
+from pmpd import input
 
 OK = 'HTTP/1.1 200'
 COLOR = '\x1b['
@@ -101,48 +104,12 @@ def cli(*args, **kwargs):
     env.config.branches = get_mock(MOCK_BRANCHES, toplevel)
     env.config.deployments = get_mock(MOCK_DEPLOYMENTS, toplevel)
 
-    stdout = env.stdout
-    stderr = env.stderr
     try:
-        exit_status = main(args=['--traceback'] + list(args), **kwargs)
-        if '--download' in args:
-            # Let the progress reporter thread finish.
-            time.sleep(.5)
-    except Exception:
-        sys.stderr.write(stderr.read())
-        raise
+        exit_status = main(list(args), **kwargs)
     except SystemExit:
         exit_status = ExitStatus.ERROR
 
-    stdout.seek(0)
-    stderr.seek(0)
-
-    output = stdout.read()
-    try:
-        r = StrResponse(output.decode('utf8'))
-    except UnicodeDecodeError:
-        r = BytesResponse(output)
-    else:
-        if COLOR not in r:
-            # De-serialize JSON body if possible.
-            if r.strip().startswith('{'):
-                #noinspection PyTypeChecker
-                r.json = json.loads(r)
-            elif r.count('Content-Type:') == 1 and 'application/json' in r:
-                try:
-                    j = r.strip()[r.strip().rindex('\r\n\r\n'):]
-                except ValueError:
-                    pass
-                else:
-                    try:
-                        r.json = json.loads(j)
-                    except ValueError:
-                        pass
-
-    r.stderr = stderr.read()
-    r.exit_status = exit_status
-
-    return r
+    return exit_status
 
 class BaseTestCase(unittest.TestCase):
 
@@ -173,14 +140,18 @@ class BaseTestCase(unittest.TestCase):
 
 class pmpdTest(BaseTestCase):
 
-    def test_init(self):
-        r = cli('init')
-        print(r)
-        self.assertEqual(r, '')
+    def test_help(self):
+        r = cli('test --help')
+
 
 #################################################################
 # CLI argument parsing related tests.
 #################################################################
+
+class ArgumentParserTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.parser = input.Parser()
 
 
 #################################################################

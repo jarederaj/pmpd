@@ -1,6 +1,6 @@
 """
 
-git-pmpd - Git and Python Managed Project Deployments
+pmpd - git pmpd up. Python Managed Project Deployments for git.
 
 """
 __author__ = 'Jared Hall'
