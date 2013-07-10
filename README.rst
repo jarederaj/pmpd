@@ -220,10 +220,14 @@ Contributers
 
 Jared Hall, `PyScape`_
 
-.. _branching model:        http://nvie.com/git-model
-.. _gitflow:               https://github.com/nvie/gitflow
-.. _gitolite:              https://github.com/sitaramc/gitolite
-.. _PyScape:                http://www.pyscape.com/pmpd
-.. _pmpd GitHub:           https://github.com/jarederaj/pmpd
-.. _pmpd PyPI:             https://pypi.python.org/pypi/pmpd/
-.. _pmpd PyScape:           http://www.pyscape.com/pmpd
+.. _branching model: http://nvie.com/git-model
+.. _gitflow: https://github.com/nvie/gitflow
+.. _gitolite: https://github.com/sitaramc/gitolite
+.. _Peter Lundgren: http://www.peterlundgren.com/
+.. _blog post: http://www.peterlundgren.com/blog/on-gits-shortcomings/
+.. _Steve Losh: http://stevelosh.com/
+.. _metaphor: http://stevelosh.com/blog/2013/04/git-koans/
+.. _PyScape: http://www.pyscape.com/pmpd
+.. _pmpd GitHub: https://github.com/jarederaj/pmpd
+.. _pmpd PyPI: https://pypi.python.org/pypi/pmpd/
+.. _pmpd PyScape: http://www.pyscape.com/pmpd
