@@ -32,6 +32,62 @@ Main Features
   - Developer handles merges, even with work that isn't completed yet.
 * Release requirements are tightly regulated
 
+=========
+Why pmpd?
+========
+
+--------------------
+git is hard to learn
+--------------------
+
+``pmpd`` is a reaction the complexities of git and the incompleteness of gitflow.  
+A lot of the best criticisms of git seem to come from people who use and love
+git. `Peter Lundgren`_ wrote an excellent `blog post`_ to this effect. 
+`Steve Losh`_ also wrote an excellent `metaphor`_ for git's UX, comparing 
+learning git to the study of Zen Koans. Git is especially hard to learn if you 
+don't speak English fluently because the functionality itself can at times be 
+cryptic. With 147 commands A lot of the functionality that's available in git 
+is just, well, magical. The bottom line is that ``pmpd`` gives you access to some 
+of that magic with fewer key strokes and a shorter learning curve.
+
+-------------------------------------------------------------------
+Development work is easier and feature branches are more autonomous
+-------------------------------------------------------------------
+
+For whatever reason developers don't always get their job done right the first 
+time. In larger group projects this issue compounds as you try to manage more 
+people. If everyone is working or merging work into the same repo then releasing 
+collections of branches to production becomes complicated. It's insane to hold 
+back working code because a minimally consequential feature fails to pass 
+testing or code review. Feature branches and hotfixes need to be autonomous 
+bodies of work, complete with any merging that might be required for down OR 
+upstream work.
+
+-----------------------------------------------------------------------------------
+Production environments require fast and dramatic action on one to infinity servers
+-----------------------------------------------------------------------------------
+
+This is self explanatory.  When I create a release I only want to enter one 
+command and I want to have insurance that my wishes have been executed on every 
+development server. ``pmpd`` consolidates this functionality and uses git to do it. 
+It does this without installing any extra software or configurations on your 
+servers, too.
+
+-----------------------------------------------
+pmpd helps projects that are in constant triage
+-----------------------------------------------
+
+Further, some projects require the ability to partially or fully implement 
+various forms of "continuous integration," a term interpreted differently 
+depending on the experience and abilities available to the organization. These 
+same groups might also balk at the expense of writing good unit tests and 
+training less experienced talent. The time required to write sufficient unit 
+tests to ensure stability before release is money better spent on lower wage 
+"testers," and making people available to answer phone calls or emails from 
+angry users... at least initially. To achieve these goals git really needs to 
+get ``pmpd`` up so that it rolls releases forward and backward in "time" on a 
+whim and without seriously effecting the development cycle.
+
 ============
 Installation
 ============
@@ -166,10 +222,14 @@ Contributers
 
 Jared Hall, `PyScape`_
 
-.. _branching model:   http://nvie.com/git-model
-.. _gitflow:          https://github.com/nvie/gitflow
-.. _gitolite:         https://github.com/sitaramc/gitolite
-.. _PyScape:           http://www.pyscape.com/pmpd
-.. _pmpd GitHub:  https://github.com/jarederaj/pmpd
-.. _pmpd PyPI:    https://pypi.python.org/pypi/pmpd/
-.. _pmpd PyScape:  http://www.pyscape.com/pmpd
+.. _branching model:        http://nvie.com/git-model
+.. _gitflow:               https://github.com/nvie/gitflow
+.. _gitolite:              https://github.com/sitaramc/gitolite
+.. _Peter Lundgren:         http://www.peterlundgren.com/
+.. _blog post:              http://www.peterlundgren.com/blog/on-gits-shortcomings/
+.. _Steve Losh:             http://stevelosh.com/
+.. _metaphor:               http://stevelosh.com/blog/2013/04/git-koans/
+.. _PyScape:                http://www.pyscape.com/pmpd
+.. _pmpd GitHub:           https://github.com/jarederaj/pmpd
+.. _pmpd PyPI:             https://pypi.python.org/pypi/pmpd/
+.. _pmpd PyScape:           http://www.pyscape.com/pmpd
