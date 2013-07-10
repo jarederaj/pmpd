@@ -34,7 +34,7 @@ Main Features
 
 =========
 Why pmpd?
-========
+=========
 
 --------------------
 git is hard to learn
